@@ -1,0 +1,7 @@
+<DatabaseSettings>
+  <Collation>Latin1_General_CI_AI</Collation>
+  <ServerVersion>Sql2012</ServerVersion>
+  <ServerName>N05F4R42V5\SQL2012</ServerName>
+  <DatabaseName>TestComplete1</DatabaseName>
+  <DatabaseInformation Version="0" />
+</DatabaseSettings>

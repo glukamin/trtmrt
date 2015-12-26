@@ -1,0 +1,24 @@
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [Test].[MyTable] (
+		[IDColumn]     [nvarchar](25) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+		[name]         [varchar](25) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [Test].[MyTable]
+	ADD
+	CONSTRAINT [PK__MyTable__06C68232DC926FE9]
+	PRIMARY KEY
+	CLUSTERED
+	([IDColumn])
+	ON [PRIMARY]
+GO
+ALTER TABLE [Test].[MyTable]
+	ADD
+	CONSTRAINT [DF__MyTable__IDColum__1367E606]
+	DEFAULT (N'AdvWorks_'+CONVERT([nvarchar](20),NEXT VALUE FOR [Test].[CounterSeq])) FOR [IDColumn]
+GO
+ALTER TABLE [Test].[MyTable] SET (LOCK_ESCALATION = TABLE)
+GO
